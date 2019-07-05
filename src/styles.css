@@ -15,3 +15,15 @@ form, p {
 li {
   margin-top: .5em;
 }
+
+label {
+  margin: 10px;
+}
+
+button {
+  margin: 10px !important;
+}
+
+input {
+  width: 20em !important;
+}
