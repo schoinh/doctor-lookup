@@ -24,33 +24,20 @@ $(function() {
           let addressInfo;
           let phoneNumber;
           let webSite;
+          let newPatients;
           for (var j = 0; j < (doctorList[i].practices).length; j++) {
             if (doctorList[i].practices[j].within_search_area === true) {
               addressInfo = doctorList[i].practices[j].visit_address;
               phoneNumber = doctorList[i].practices[j].phones[0].number;
               webSite = doctorList[i].practices[j].website;
+              newPatients = doctorList[i].practices[j].accepts_new_patients;
               break;
             } else {
               addressInfo = false;
             }
           }
 
-          // for (j = 0; j < (doctorList[i].practices).length; j++) {
-          //   if (doctorList[i].practices[j].within_search_area === true) {
-          //     break;
-          //   }
-          // }
-
-          // for (j = 0; j < (doctorList[i].practices).length; j++) {
-          //   if (doctorList[i].practices[j].within_search_area === true && doctorList[i].practices[j].website) {
-          //     // webSite = ;
-          //     break;
-          //   } else {
-          //     // phoneNumber = false;
-          //   }
-          // }
-
-          $('ol').append(`<li>${fullName}`);
+          $('ol').append(`<li><span class="name">${fullName}</span>`);
 
           if (addressInfo) {
             const addressOutput = `${addressInfo.street}<br>${addressInfo.city}, ${addressInfo.state} ${addressInfo.zip}`
@@ -67,7 +54,11 @@ $(function() {
           }
 
           if (webSite) {
-            $('ol').append(`<br><a href="${webSite}">${webSite}</a></li>`);
+            $('ol').append(`<br><a href="${webSite}">${webSite}</a>`);
+          } 
+
+          if (newPatients) {
+            $('ol').append(`<br>Accepting New Patients &#9989</li>`);
           } else {
             $('ol').append('</li>');
           }
