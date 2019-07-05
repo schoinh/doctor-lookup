@@ -23,22 +23,32 @@ $(function() {
 
           let addressInfo;
           let phoneNumber;
+          let webSite;
           for (var j = 0; j < (doctorList[i].practices).length; j++) {
-            if (doctorList[i].practices[j].within_search_area === true && doctorList[i].practices[j].visit_address) {
+            if (doctorList[i].practices[j].within_search_area === true) {
               addressInfo = doctorList[i].practices[j].visit_address;
+              phoneNumber = doctorList[i].practices[j].phones[0].number;
+              webSite = doctorList[i].practices[j].website;
               break;
             } else {
               addressInfo = false;
             }
           }
-          for (j = 0; j < (doctorList[i].practices).length; j++) {
-            if (doctorList[i].practices[j].within_search_area === true && doctorList[i].practices[j].phones[0].number) {
-              phoneNumber = doctorList[i].practices[j].phones[0].number;
-              break;
-            } else {
-              phoneNumber = false;
-            }
-          }
+
+          // for (j = 0; j < (doctorList[i].practices).length; j++) {
+          //   if (doctorList[i].practices[j].within_search_area === true) {
+          //     break;
+          //   }
+          // }
+
+          // for (j = 0; j < (doctorList[i].practices).length; j++) {
+          //   if (doctorList[i].practices[j].within_search_area === true && doctorList[i].practices[j].website) {
+          //     // webSite = ;
+          //     break;
+          //   } else {
+          //     // phoneNumber = false;
+          //   }
+          // }
 
           $('ol').append(`<li>${fullName}`);
 
@@ -51,9 +61,15 @@ $(function() {
 
           if (phoneNumber) {
             const phoneNumberOutput = `(${phoneNumber.substring(0,3)}) ${phoneNumber.substring(3,6)}-${phoneNumber.substring(6,10)}`;
-            $('ol').append(`<br>${phoneNumberOutput}</li>`);
+            $('ol').append(`<br>${phoneNumberOutput}`);
           } else {
-            $('ol').append('<br>No phone number on file</li>');
+            $('ol').append('<br>No phone number on file');
+          }
+
+          if (webSite) {
+            $('ol').append(`<br><a href="${webSite}">${webSite}</a></li>`);
+          } else {
+            $('ol').append('</li>');
           }
         }
       })
