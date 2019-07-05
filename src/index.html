@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Doctor Lookup</title>
+    <title>Seattle Doctor Lookup</title>
   </head>
   <body>
     <div class="container">
-      <h1>Doctor Lookup</h1>
-      <h5>Powered by BetterDoctor</h5>
+      <div class="jumbotron">
+        <h1>Seattle Doctor Lookup</h1>
+        <h5>Powered by <a href="https://betterdoctor.com/">BetterDoctor</a></h5>
+      </div>
       <hr>
       <form id="searchKeyword">
         <label for="keyword">Search by medical concern:</label>
         <input id="keyword" type="text">
-        <button type="submit" class="btn btn-info">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
       </form>
       <br>
       <form id="searchName">
         <label for="name">Search by name of doctor:</label>
         <input id="name" type="text">
-        <button type="submit" class="btn btn-info">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
       </form>
+      <hr>
       <div class="errors"></div>
       <div>
         <ol>
