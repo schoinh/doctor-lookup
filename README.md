@@ -1,17 +1,17 @@
-# APP NAME
+# Doctor Lookup
 
-#### _DESCRIPTION - BUILD DATE_
+#### _A web site for searching for doctors - July 5, 2019_
 
 #### _By **Na Hyung Choi**_
 
 ## Description
 
-DETAILED DESCRIPTION
+On this web site, a user may enter a medical issue and receive a list of doctors in Seattle. This web site uses the [BetterDoctor API](https://developer.betterdoctor.com).
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **BEHAVIOR** | INPUT | OUTPUT |
+| **Enter a medical issue to receive a list of doctors in the Seattle area that fit the search query** | diabetes | Jenny Smith, MD</br>123 Salmon St, Seattle, WA 98101</br>(206) 123-4567</br>http://drjennysmith.com</br>Accepting New Patients: Yes |
 
 ## Setup/Installation Requirements
 
