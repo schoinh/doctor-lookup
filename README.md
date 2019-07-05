@@ -11,7 +11,10 @@ On this web site, a user may enter a medical issue and receive a list of doctors
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Enter a medical issue to receive a list of doctors in the Seattle area that fit the search query** | diabetes | Jenny Smith, MD</br>123 Salmon St, Seattle, WA 98101</br>(206) 123-4567</br>http://drjennysmith.com</br>Accepting New Patients: Yes |
+| **Search by medical issue to receive a list of doctors in the Seattle area that fit the search query** | Key Word: diabetes | Jenny Smith, MD</br>123 Salmon St, Seattle, WA 98101</br>(206) 123-4567</br>http://drjennysmith.com</br>Accepting New Patients: Yes</br></br>James Bobson, MD</br>... |
+| **Search by name to receive a list of doctors in the Seattle area that fit the search query** | Last Name: Smith | Jenny Smith, MD</br>123 Salmon St, Seattle, WA 98101</br>(206) 123-4567</br>http://drjennysmith.com</br>Accepting New Patients: Yes</br></br>Tom Smith, MD</br>... |
+| **Notifies user when no doctors meet the search criteria** | Last Name: Yeruweiot | No doctors meet your search criteria. |
+| **Displays error message upon unsuccessful API call** | No API Key | 401 Error: Unauthorized |
 
 ## Setup/Installation Requirements
 
