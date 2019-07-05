@@ -10,16 +10,20 @@
         <h5>Powered by <a href="https://betterdoctor.com/">BetterDoctor</a></h5>
       </div>
       <hr>
-      <form id="searchKeyword">
-        <label for="keyword">Search by medical concern:</label>
-        <input id="keyword" type="text">
-        <button type="submit" class="btn btn-primary">Search</button>
+      <form id="searchKeyword" class="form-inline">
+        <div class="form-group">
+          <label for="keyword">Search by medical concern: </label>
+          <input class="form-control" id="keyword" type="text" placeholder="e.g., athlete's foot, heart disease">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
       </form>
       <br>
-      <form id="searchName">
-        <label for="name">Search by name of doctor:</label>
-        <input id="name" type="text">
-        <button type="submit" class="btn btn-primary">Search</button>
+      <form id="searchName" class="form-inline">
+        <div class="form-group">
+          <label for="name">Search by name of doctor: </label>
+          <input class="form-control" id="name" type="text" placeholder="e.g., Smith">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
       </form>
       <hr>
       <div class="errors"></div>
