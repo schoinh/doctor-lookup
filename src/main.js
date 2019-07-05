@@ -8,7 +8,7 @@ import { parseFormatData } from './parse-format';
 $(function() {
   $('#searchKeyword').submit(function(event) {
     event.preventDefault();
-    $('.errors, ol').empty();
+    $('.errors, ol, p').empty();
 
     const searchInput = $('#keyword').val();
     const doctorSearch = new DoctorSearch();
@@ -28,7 +28,7 @@ $(function() {
 
   $('#searchName').submit(function(event) {
     event.preventDefault();
-    $('.errors, ol').empty();
+    $('.errors, ol, p').empty();
 
     const searchInput = $('#name').val();
     const doctorSearch = new DoctorSearch();
