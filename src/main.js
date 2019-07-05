@@ -25,4 +25,24 @@ $(function() {
     
     $('form')[0].reset();
   });
+
+  $('#searchName').submit(function(event) {
+    event.preventDefault();
+    $('.errors, ol').empty();
+
+    const searchInput = $('#name').val();
+    const doctorSearch = new DoctorSearch();
+    const promise = doctorSearch.getDoctorsByName(searchInput);
+    
+    promise
+      .then(function(result) {
+        const output = JSON.parse(result);
+        parseFormatData(output);
+      })
+      .catch(function(error) {
+        $('.errors').text(`There was an error processing your request: ${error.message}`);
+      });
+    
+    $('form')[0].reset();
+  });
 });
