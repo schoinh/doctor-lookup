@@ -20,13 +20,13 @@ On this web site, a user may enter a medical issue and receive a list of doctors
 
 1. Clone this repository:
     ```
-    $ git clone REPO URL HERE
+    $ git clone https://github.com/schoinh/doctor-lookup.git
     ```
 2. Install dependencies:
     ```
     $ npm install
     ```
-3. Get an API key from the [NAME OF API SITE] (URL OF API SITE)
+3. Register and get an API key from the [BetterDoctor API](https://developer.betterdoctor.com)
 4. Create a file named ".env" inside the project directory:
     ```
     $ touch .env
@@ -41,7 +41,7 @@ On this web site, a user may enter a medical issue and receive a list of doctors
     ```
 7. Open the web page (dist/index.html)
 
-* OR go directly to the [Web page](http://schoinh.github.io/XXXXXXX)
+* OR go directly to the [Web page](http://schoinh.github.io/doctor-lookup)
 
 ## Known Bugs
 * No known bugs at this time.
