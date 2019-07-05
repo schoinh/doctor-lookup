@@ -33,7 +33,7 @@ On this web site, a user may enter a medical issue and receive a list of doctors
     ```
 5. Inside ".env", insert this line and save the file:
     ```
-    exports.apiKey = YOUR API KEY HERE
+    apiKey = YOUR API KEY HERE
     ```
 6. Build distribution files:
     ```
