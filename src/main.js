@@ -43,6 +43,6 @@ $(function() {
         $('.errors').text(`There was an error processing your request: ${error.message}`);
       });
     
-    $('form')[0].reset();
+    $('form')[1].reset();
   });
 });
