@@ -43,8 +43,6 @@ The Web site will specifically search for doctors by key word or name within 5 m
     ```
 7. Open the web page (dist/index.html)
 
-* OR go directly to the [Web page](http://schoinh.github.io/doctor-lookup)
-
 ## Known Bugs
 * No known bugs at this time.
 
