@@ -8,8 +8,17 @@ export const parseFormatData = function(output) {
   if (doctorList.length === 0) {
     $('.errors').text('No doctors in Seattle meet your search criteria.');
   } else {  
+    $('ol').before('<p>&#9989 = Accepting new patients');
+
     for (var i = 0; i < doctorList.length; i++) {
-      const fullName = `${doctorList[i].profile.first_name} ${doctorList[i].profile.last_name}, ${doctorList[i].profile.title}`;
+      let fullName = `${doctorList[i].profile.first_name} ${doctorList[i].profile.last_name}, ${doctorList[i].profile.title}`;
+
+      let specialty;
+      if ((doctorList[i].specialties).length > 0) {
+        specialty = doctorList[i].specialties[0].actor;
+      } else {
+        specialty = false;
+      }
 
       let addressInfo;
       let phoneNumber;
@@ -22,12 +31,18 @@ export const parseFormatData = function(output) {
           webSite = doctorList[i].practices[j].website;
           newPatients = doctorList[i].practices[j].accepts_new_patients;
           break;
-        } else {
-          addressInfo = false;
         }
       }
 
-      $('ol').append(`<li><span class="name">${fullName}</span>`);
+      if (newPatients === true) {
+        fullName = `${fullName} &#9989`;
+      }
+
+      if (specialty) {
+        $('ol').append(`<li><span class="name">${fullName}</span><br>${specialty}`);
+      } else {
+        $('ol').append(`<li><span class="name">${fullName}</span>`);
+      }
 
       if (addressInfo) {
         const addressOutput = `${addressInfo.street}<br>${addressInfo.city}, ${addressInfo.state} ${addressInfo.zip}`
@@ -46,12 +61,6 @@ export const parseFormatData = function(output) {
       if (webSite) {
         $('ol').append(`<br><a href="${webSite}">${webSite}</a>`);
       } 
-
-      if (newPatients) {
-        $('ol').append(`<br>Accepting New Patients &#9989</li>`);
-      } else {
-        $('ol').append('</li>');
-      }
     }
   }
 }
